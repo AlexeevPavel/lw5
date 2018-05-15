@@ -25,13 +25,38 @@ window.onload = function () {
 	{ id: 11, date: eleven },
 	{ id: 12, date: twelve },
 	{ id: 13, date: thirteen }];
-	var info = ' ';
 
 	$('.button-book').click(function (event) {
 		var save = { tourName, tourRating, tourExpand, tourPrice, tourImg }
 		sessionStorage.setItem('tour', save);
 		alert('Tour booking');
 	});
+
+	for (var i = 0; nine[i] != undefined; i++){	
+		var info = '<div id="one-tour">' +
+			'<div class="tour-name">' +
+			'		9 May, 2018   ' + nine[i].name + '' +
+			'</div>' +
+			'<div class="info">' +
+			'	<div>' +
+			'	<div class="text">' +
+			'			<div class="info-tour">' +
+			'				<label>Language:</label>' +
+			'				<div class="lang"> English</div>' +
+			'				<label>Rating: </label>' +
+			'				<div class="rating">' + nine[i].rating + '</div>' +
+			'				<label>Price: </label>' +
+			'				<div class="price">' + nine[i].price + '</div>' +
+			'			</div>' +
+			'			<div class="expand">' + nine[i].expand + '</div>' +
+			'		</div>' +
+			'		<input class="button-book" type="button" value="Buy">' +
+			'	</div>' +
+			'	<img src="' + nine[i].img + '" alt="" class="img-tour">' +
+			'</div>' +
+			'</div>';					
+		tour.append(info);}
+
 
 	$('#month td').click(function (event) {
 		if (event.target.tagName == "TD") {
